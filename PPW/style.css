@@ -79,7 +79,9 @@ img {
 
 /* ======================= BUTTONS ======================= */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.8rem 2rem;
     border-radius: 50px;
     font-weight: 500;
@@ -273,12 +275,6 @@ img {
     transform: translateY(-10px);
 }
 
-.project__img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
 .project__content {
     padding: 1.5rem;
 }
@@ -326,14 +322,42 @@ img {
     margin-left: 0.25rem;
 }
 
+/* ======================= RESUME SECTION ======================= */
+#resume {
+    background-color: var(--secondary-color);
+}
+
+.resume-container {
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: var(--card-shadow);
+    border-radius: 10px;
+    overflow: hidden; /* Ensures the iframe corners are also rounded */
+}
+
+.resume-iframe {
+    width: 100%;
+    height: 100vh; /* Make it tall */
+    max-height: 800px; /* But not ridiculously tall */
+    border: none; /* Remove default iframe border */
+}
+
 /* ======================= CONTACT SECTION ======================= */
 #contact {
-    background-color: var(--secondary-color);
+    /* Removed background-color to let the white show through from the body */
 }
 
 .contact__text {
     max-width: 600px;
     margin: 0 auto 2rem auto;
+}
+
+.contact__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
 }
 
 .contact__socials {
@@ -380,7 +404,7 @@ img {
         transition: 0.3s;
         box-shadow: -2px 0 5px rgba(0,0,0,0.1);
     }
-    
+
     /* A simple implementation to show the menu. For a real toggle, you'd need JavaScript */
     /* .nav__menu.show-menu { right: 0; } */
 
@@ -398,7 +422,7 @@ img {
     .hero__content {
         margin-top: 2rem;
     }
-    
+
     .hero__buttons {
         justify-content: center;
     }
@@ -406,7 +430,7 @@ img {
     .hero__image {
         max-width: 250px;
     }
-    
+
     .about__text {
         text-align: center;
     }
