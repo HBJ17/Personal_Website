@@ -1,0 +1,73 @@
+*{
+    scroll-behavior: smooth;
+}
+
+main {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+div {
+    background-color: rgb(218, 228, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 300px;
+    border-radius: 12px;
+}
+
+header {
+    padding: 10px;
+    color: aliceblue;
+    background-color: rgb(158, 168, 168);
+    text-align: center;
+}
+
+button {
+    height: 40px;
+    width: 100px;
+    background-color: rgb(126, 228, 168);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+section {
+    background-color: rgb(218, 228, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 12px;
+}
+footer {
+    margin: 5px;
+    padding: 5px;
+    color: aliceblue;
+    background-color: rgb(158, 168, 168);
+    text-align: center;
+}
+
+#result h4,
+#feedback h4 {
+    margin: 10px 0;
+}
+
+.progress-bar {
+    margin-top: 10px;
+    background: #ddd;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: green;
+}

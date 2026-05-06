@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #profile {
+            border: 2px solid black;
+            padding: 20px;
+            width: 500px;
+        }
+
+        .user-info {
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="profile">
+
+        <h1 id="username">John Doe</h1>
+
+        <p id="bio">
+            Web developer and technology enthusiast.
+        </p>
+
+        <div class="user-info">Email: john@example.com</div>
+
+        <div class="user-info">Location: Chennai</div>
+
+        <ul id="activity-list">
+            <li>Coding</li>
+            <li>Gaming</li>
+            <li>Photography</li>
+        </ul>
+
+        <button id="load-btn">Load More Activities</button>
+
+    </div>
+
+    <script>
+
+        // DOM Logging
+        let profile = document.getElementById("profile");
+
+        console.log(profile);
+
+        let ul = document.getElementById("activity-list");
+
+        console.log("Children of UL:");
+
+        console.log(ul.children);
+
+        // Element Styling (ID)
+        let username = document.getElementById("username");
+
+        username.style.color = "blue";
+
+        // Element Styling (Class)
+        let info = document.getElementsByClassName("user-info");
+
+        for (let i = 0; i < info.length; i++) {
+            info[i].style.backgroundColor = "lightgray";
+        }
+
+        // Query Selector (Single)
+        let firstLi = document.querySelector("#activity-list li");
+
+        firstLi.style.fontWeight = "bold";
+
+        // Query Selector (Multiple)
+        let allLi = document.querySelectorAll("#activity-list li");
+
+        allLi.forEach(item => {
+            item.style.textDecoration = "underline";
+        });
+
+        // Content Update (innerText)
+        let bio = document.getElementById("bio");
+
+        bio.innerText =
+            "Full-stack developer with a passion for adventure and tech.";
+
+        // Sibling Navigation (Forward)
+        let nextElement = username.nextElementSibling;
+
+        nextElement.style.fontStyle = "italic";
+
+        // Sibling Navigation (Backward)
+        let button = document.getElementById("load-btn");
+
+        let previous = button.previousElementSibling;
+
+        console.log("Previous Element:", previous);
+
+        // Dynamic List Update
+        button.addEventListener("click", function () {
+
+            ul.innerHTML += `
+                <li>Reading</li>
+                <li>Traveling</li>
+            `;
+
+        });
+
+        // All Siblings
+        let middleLi = ul.children[1];
+
+        console.log("Previous Siblings:");
+
+        let prev = middleLi.previousElementSibling;
+
+        while (prev) {
+            console.log(prev.tagName);
+            prev = prev.previousElementSibling;
+        }
+
+        console.log("Next Siblings:");
+
+        let next = middleLi.nextElementSibling;
+
+        while (next) {
+            console.log(next.tagName);
+            next = next.nextElementSibling;
+        }
+
+        // Node Comparison
+        console.log("nextSibling:", username.nextSibling);
+
+        console.log("nextElementSibling:", username.nextElementSibling);
+
+    </script>
+
+</body>
+
+</html>

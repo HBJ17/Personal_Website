@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #product-container {
+            border: 2px solid black;
+            padding: 20px;
+            width: 500px;
+        }
+
+        .product-description {
+            font-size: 18px;
+        }
+
+        .product-specs p {
+            padding: 5px;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="product-container">
+
+        <h1 id="product-title">Wireless Headphones</h1>
+
+        <p class="product-description">
+            High quality wireless headphones with noise cancellation.
+        </p>
+
+        <div class="product-specs">
+            <p>Battery Life: 20 Hours</p>
+            <p>Color: Black</p>
+            <p>Weight: 250g</p>
+        </div>
+
+        <button id="details-btn">Show More Details</button>
+
+    </div>
+
+    <script>
+
+        // Node Traversal
+        let container = document.getElementById("product-container");
+
+        console.log("Child Nodes Tag Names:");
+
+        container.childNodes.forEach(node => {
+            console.log(node.nodeName);
+        });
+
+        // ID Selection
+        let title = document.getElementById("product-title");
+
+        title.innerText = "Wireless Headphones Pro – 2025 Edition";
+
+        // Class Selection
+        let description = document.getElementsByClassName("product-description")[0];
+
+        description.style.color = "green";
+
+        // Query Selector (Single)
+        let firstSpec = document.querySelector(".product-specs p");
+
+        firstSpec.style.fontWeight = "bold";
+
+        // Query Selector (Multiple)
+        let allSpecs = document.querySelectorAll(".product-specs p");
+
+        allSpecs.forEach(spec => {
+            spec.style.borderLeft = "4px solid blue";
+            spec.style.paddingLeft = "10px";
+        });
+
+        // innerText Update
+        description.innerText +=
+            "\nNow with enhanced comfort and longer battery life.";
+
+        // Child Navigation
+        let specsDiv = document.querySelector(".product-specs");
+
+        specsDiv.firstElementChild.style.backgroundColor = "lightyellow";
+
+        specsDiv.lastElementChild.style.backgroundColor = "lightgreen";
+
+        // Node Properties
+        console.log("childNodes:", container.childNodes);
+
+        console.log("children:", container.children);
+
+        // Dynamic Content using innerHTML
+        let button = document.getElementById("details-btn");
+
+        button.addEventListener("click", function () {
+
+            specsDiv.innerHTML += `
+                <p>Warranty: 2 Years</p>
+                <p>Connectivity: Bluetooth 5.2</p>
+            `;
+
+        });
+
+    </script>
+
+</body>
+
+</html>
